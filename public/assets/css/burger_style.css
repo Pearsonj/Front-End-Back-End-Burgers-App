@@ -1,0 +1,16 @@
+html,body{
+    background-color: tan;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#left{
+    float: left;
+}
+
+#right{
+    float: right;
+}
