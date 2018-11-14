@@ -11,11 +11,15 @@ var orm = {
         });
     },
 
-    inserOne: function(vals, cb){
+
+
+    inserOne: function(tableName, vals, cb){
+        console.log(vals);
         var queryString = "INSERT INTO burgers (burger_name)";
-        queryString += " VALUES (";
+        queryString += " VALUES ('";
         queryString +=  vals;
-        queryString += ");";
+        queryString += "');";
+        console.log(queryString);
 
         connection.query(queryString, function(err, result){
             if(err){throw err;}
@@ -25,8 +29,20 @@ var orm = {
 
         });
     },
-    updateOne: function(){
+    updateOne: function(tableName, condition, cb){
+        var queryString = "UPDATE burgers SET devoured = true";
+        queryString += " WHERE ";
+        queryString +=  condition;
+        
+        console.log(queryString);
 
+        connection.query(queryString, function(err, result){
+            if(err){throw err;}
+
+            cb(result);
+        
+
+        });
 
     }
 

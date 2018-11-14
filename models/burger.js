@@ -7,14 +7,14 @@ var burger ={
         });
     },
 
-    create: function(vals, cb){
+    create: function(tableName, vals, cb){
         orm.inserOne('burgers', vals, function(res){
             cb(res);
         });
     },
 
     update: function(objColVals, condition, cb){
-        orm.updateOne('burgers', objColVals, condition,function(res){
+        orm.updateOne('burgers', condition, function(res){
             cb(res);
         });
     }

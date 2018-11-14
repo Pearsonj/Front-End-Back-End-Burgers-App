@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
-		<title>BURGERS</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/burgerss.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+	<link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+	<title>BURGERS</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="/assets/js/burgerss.js"></script>
+</head>
+
+<body>
+	{{{ body }}}
+	<script>
+		$('#burgerBtn').on('click', function () {
+			console.log("hit");
+			$.post('/api/add_burgers', {
+				burgerName: $('#name').val().trim()
+			}, function (res) {
+				console.log(res);
+				window.location.reload();
+			})
+		});
+
+
+		$('.devourBtn').on('click', function(){
+			let id = $(this).attr("data-id");
+
+		$.ajax({
+			method: 'PUT',
+			url: "/api/devour",
+			data:{id:id}
+		}).then(function(res){
+			console.log(res);
+			window.location.reload();
+		})
+			
+		})
+	</script>
+
+</body>
+
 </html>

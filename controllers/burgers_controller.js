@@ -18,21 +18,21 @@ router.post('/api/add_burgers', function(req, res){
     burger.create([
         "burger_name"
     ], [
-        req.body.burger_name
-    ], function(result){
-        res.json({burger_name: result.insertId});
+        req.body.burgerName
+    ], function(burger){
+        res.json({burgerName: burger});
     });
 });
 
-router.put('/api/burgers/:id', function(req,res){
-    var condition = "id = " + req.params.id;
+router.put('/api/devour', function(req,res){
+    var condition = "id = " + parseInt(req.body.id);
 
     console.log("condition: " + condition);
 
     burger.update({
-        devoured: req.body.devoured
-    }, condition, function(result){
-        if(relsult.changedRows === 0){
+        devoured: true
+    }, condition, function(burger){
+        if(burger.changedRows === 0){
             return res.status(404).end();
         }else{
             res.status(200).end();
