@@ -1,6 +1,16 @@
 html,body{
-    background-color: tan;
+    background-color:tan ;
     text-align: center;
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+
 }
 
 ul{
@@ -14,3 +24,45 @@ ul{
 #right{
     float: right;
 }
+
+#burgerImg{
+    position: relative;
+    left: -2%;
+    height: 300px;
+    width: auto;
+}
+
+#devour{
+    border-radius: 20px;
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    border-style: none;
+    color: orange;
+    height: 20px;
+    width: auto;
+    margin-left: 3px;
+}
+
+li{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#burgerBtn{
+    border-radius: 20px;
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    border-style: none;
+    color: orange;
+    height: 20px;
+    width: auto;
+    margin-left: 3px;
+
+}
+
+#burgerName{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-weight: 700;s
+}
+

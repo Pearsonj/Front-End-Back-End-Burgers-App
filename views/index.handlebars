@@ -1,5 +1,6 @@
-<h1>Burgers Bro</h1>
+<h1>The Burger Factory</h1>
 
+<img id="burgerImg" src="/assets/img/Hamburger-PNG-File.png" alt="burger.png">
 
 <div id="left">
 <h2>Burgers That Are Ready To Be Devoured!</h2>
@@ -10,7 +11,7 @@
     <li>
     {{id}}
     {{burger_name}}
-    <button data-id={{id}} class="devourBtn">devour</button>
+    <button data-id={{id}} class="devourBtn" id="devour">DEVOUR</button>
     </li>
     {{/unless}}
     {{/each}}
@@ -39,7 +40,7 @@
 <form class="create-form">
 
   <div class="form-group">
-    <label for="name">Burger Name:</label>
+    <label id="burgerName" for="name">Burger Name:</label>
     <input type="text" id="name" name="name">
   </div>
 
